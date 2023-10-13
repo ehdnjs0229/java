@@ -36,6 +36,8 @@ public class Run {
 		circle.getAreaOfCircle();
 		circle.getSizeOfCircle();
 		circle.incrementRadius();
+		circle.getAreaOfCircle();
+		circle.getSizeOfCircle();
 		
 	
 	
