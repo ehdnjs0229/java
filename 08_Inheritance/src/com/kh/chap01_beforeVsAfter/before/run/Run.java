@@ -16,6 +16,12 @@ public class Run {
 		// TV 객체
 		Tv t = new Tv("LG", "t-01", "슬림티비", 3_500_000,60);
 		
+		/*
+		 * 실행하고자 하는 메소드가 자식클래스에 없다면, 자동으로 부모클래스에 있는 메소드가 실행됨.
+		 * 단 , 자식 클래스에서 재정의된 메소드가 있을경우 자식클래스에 있는 메소드가 실행에서
+		 * 우선
+		 */
+		
 		System.out.println(d.information());
 		System.out.println(sm.information());
 		System.out.println(t.information());
