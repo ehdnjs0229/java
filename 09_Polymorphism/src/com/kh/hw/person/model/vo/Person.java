@@ -50,8 +50,9 @@ public class Person {
 		this.weight = weight;
 	}
 	
+	@Override
 	public String toString() {
-		return name + " / " + age +  " / " + height +  " / " + weight;
+		return name + " , " + age +  " , " + height +  " , " + weight;
 	}
 
 }
