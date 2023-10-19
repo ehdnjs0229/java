@@ -1,6 +1,6 @@
 package com.kh.chap02_abstractAndInterface.part02_family.model.vo;
 
-public class Baby extends Person{
+public class Baby extends Person implements Basic{
 	
 	public Baby() {
 		
