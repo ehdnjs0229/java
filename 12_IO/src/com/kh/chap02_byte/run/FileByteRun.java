@@ -17,7 +17,8 @@ public class FileByteRun {
 
 	public static void main(String[] args) {
 		FileByteDao fbd = new FileByteDao();
-		fbd.fileSave();
+		//fbd.fileSave();
+		fbd.fileRead();
 
 	}
 
