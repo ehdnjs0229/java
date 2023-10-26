@@ -1,5 +1,6 @@
 package com.kh.practice.set.view;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 import com.kh.practice.set.controller.LotteryController;
@@ -22,7 +23,8 @@ public class LotteryMenu {
 			System.out.println("5. 당첨 대상 검색");
 			System.out.println("9. 종료");
 			System.out.println("메뉴 번호 선택 :");
-			int menu = sc.nextInt();
+			int menu = Integer.parseInt(sc.nextLine());
+			
 			switch (menu) {
 			case 1:
 				insertObject();
@@ -71,18 +73,50 @@ public class LotteryMenu {
 	}
 	
 	public void deleteObject() {
+		System.out.println("삭제할 대상의 이름과 핸드폰 번호를 입력하세요.");
+		System.out.println("이름 : ");
+		String name = sc.nextLine();
 		
+		System.out.println("핸드폰 번호('-'빼고) : ");
+		String phone = sc.nextLine();
+		
+		lc.deleteObject(new Lottery(name, phone));
+		
+		if(lc.deleteObject(new Lottery(name, phone))) {
+			System.out.println("삭제 완료 되었습니다.");
+		} else {
+			System.out.println("존재하지 않는 대상입니다.");
+		}	
 	}
 	
 	public void winObject() {
-		
+		System.out.println(lc.winObject());
 	}
 	
 	public void sortedWinObject() {
+		Iterator<Lottery> iter = lc.sortedWinObject().iterator();
 		
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
 	}
 	
 	public void searchWinner() {
+		System.out.println("검색할 대상의 이름과 핸드폰 번호를 입력하세요.");
+		
+		System.out.println("이름 : ");
+		String name = sc.nextLine();
+		
+		System.out.println("번호 : ");
+		String phone = sc.nextLine();
+		
+		boolean result = lc.searchWinner(new Lottery(name,phone));
+		
+		if(result) {
+			System.out.println("축하합니다. 당첨 목록에 존재합니다.");
+		} else {
+			System.out.println("안타깝지만 당첨 목록에 존재하지 않습니다.");
+		}
 		
 	}
 	
